@@ -1,0 +1,72 @@
+digraph ML_Math{           //设置分辨率
+	dpi = 320;
+	//graph[bgcolor="cadetblue"];
+	{
+		node[shape=plaintext]
+		"STAGE 0"->"STAGE 1"->"STAGE 2"->"STAGE 3"->"STAGE 4"->"STAGE 5";
+	}
+	{
+		node[shape=plaintext,fontname="SimSon"]
+
+		set_theory[label="集合论\n☆☆☆☆"];
+		cal[label="微积分\n☆☆☆☆☆"];
+		complex_fun[label="复变函数\n☆☆"];
+		linear_algebra[label="线性代数\n☆☆☆☆☆"];
+		analysis[label="数学分析\n☆☆☆"];
+		real_analysis[label="实变函数\n☆☆☆"];
+		function_analysis[label="泛函分析\n☆☆"];
+		diff_equation[label="微分方程\n☆☆☆☆"];
+		convex_opt[label="凸优化\n☆☆☆☆"];
+		measurement_theory[label="测度论\n☆"];
+		probability[label="概率论\n☆☆☆☆☆"];
+		statistics[label="数理统计\n☆☆☆☆☆"];
+		random_process[label="随机过程\n☆☆☆☆"];
+		information_theory[label="信息论\n☆☆☆☆"];
+		target[shape=box,label="Machine Learning",color = gray,style=filled];
+	}
+	{
+		{rank=same;"STAGE 0";set_theory;}
+		{rank=same;"STAGE 1";cal;linear_algebra;}
+		{rank=same;"STAGE 2";complex_fun;analysis;diff_equation;}
+		{rank=same;"STAGE 3";real_analysis;probability;}
+		{rank=same;"STAGE 4";function_analysis;measurement_theory;statistics;information_theory;}
+		{rank=same;"STAGE 5";convex_opt;random_process;}
+	}
+	{
+		edge[color=darkgreen]
+		set_theory->cal;
+		set_theory->linear_algebra;
+		linear_algebra->diff_equation;
+		linear_algebra->probability;
+		linear_algebra->convex_opt;
+		cal->analysis;
+		cal->diff_equation;
+		cal->probability;
+		cal->complex_fun;
+		cal->convex_opt;
+		analysis->real_analysis;
+		real_analysis->function_analysis;
+		function_analysis->convex_opt;
+		function_analysis->measurement_theory;
+		probability->statistics;
+		statistics->random_process;
+		statistics->information_theory;
+		probability->information_theory;
+		measurement_theory->probability[color=gray40];
+	}
+	/*edge to machine learing*/
+	{
+		edge[color=gold,style=dashed]
+		set_theory->target;
+		cal->target;
+		linear_algebra->target;
+		analysis->target;
+		function_analysis->target;
+		diff_equation->target;
+		convex_opt->target;
+		probability->target;
+		statistics->target;
+		random_process->target;
+		information_theory->target;
+	}
+}

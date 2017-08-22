@@ -1,0 +1,203 @@
+//linear algebra key words
+//graph
+digraph{
+	dpi = 320;
+	node[shape=box]
+	//lecture 1
+
+	linear_combination[label="Linear Combination"];
+	row_picture[label="Row Picture"];
+	column_picture[label="Column Picture"];
+	matrix[label="Matrix"];
+	//lecture 2
+	eliminate[label="Eliminate"];
+	pivote[label="Pivote"];
+	pemutation[label="pemutation"];
+	back_substitation[label="Back Substitation"];
+	ea_equ_u[label="EA=U"];
+	//lecture 3
+	column_model[label="Column Model"];
+	row_model[label="Row Model"];
+	block[label="Block"];
+	multiplication[label="Multiplication"]
+	inverse[label="Inverse"];
+	singular[label="Singular"];
+	Gauss_Jordan[label="Gauss Jordan"];
+	//lecture 4
+	a_equ_lu[label="A=LU"];
+	a_equ_ldu[label="A=LDU"];
+	//lecture 5
+	transpose[label="Transpose"];
+	symmetric[label="Symmetric"];
+	r_n[label="R^n"];
+	space[label="Space"];
+	subspace[label="Subspace"];
+	vector_space[label="Vector Space"];
+	//lecture 6
+	//lecture 7
+	rank_[label="Rank"];
+	pivot_column[label="Pivot Column"];
+	free_column[label="Free Column"];
+	ax_equ_0[label="AX=0"];
+	ux_equ_0[label="UX=0"];
+	rx_equ_0[label="RX=0"];
+	//lecture 8
+	ax_equ_b[label="AX=b"];
+	solution[label="Solution"];
+	//lecture 9
+	dependence[label="Dependence"];
+	independence[label="Independence"];
+	span[label="Span"];
+	basis[label="Basis"];
+	dimension[label="Dimension"];
+	//lecture 10
+	matrix_subspace[label="Matrix Subspace"];
+	subgraph matrix_sub_space{
+		node[shape=box,style=filled,color=gray]
+		color=red;
+		
+		row_space[label="Row Space"];
+		column_space[label="Column Space"];
+		null_space[label="Null Space"];
+		null_space_a_t[label="Null Space A\'"];
+		matrix_subspace->row_space;
+		matrix_subspace->null_space_a_t;
+		matrix_subspace->column_space;
+		matrix_subspace->null_space;
+	}
+	//lecture 14
+	vector[label="Vector"];
+	orthogonal[label="Orthogonal"];
+	orthogonal_subspace[label="Orthogonal Subspace"];
+	dot_product[label="Dot Product"];
+	//lecture 15
+	projection[label="Projection"];
+	projection_matrix[label="Projection Matrix"];
+	least_square[label="Least Square"];
+	a_t_a[label="A\'A"];
+	//lecture 17
+	orthogonal_matrix_q[label="Orthogonal Matrix Q"];
+	a_equ_q_r[label="A=QR"];
+	gram_schmidt[label="Gram-Schmidt"];
+	//lecture 18
+	determination[label="Determination"];
+	cofactor_formular[label="Cofactor Formular"];
+	//lecture 20
+	//lecture 21 
+	eigenvalue[label="Eigenvalue"];
+	eigenvector[label="Eigenvector"];
+	trace[label="Trace"];
+	diagonal_matrix[label="Diagonal Matrix"];
+	//lecture 23
+	//lecture 24
+	//lecture 25
+	positive_definite_matrix[label="Positive Definite Matrix"];
+	//lecture 26
+	//lecture 27
+	principal_axis_theorem[label="Principal Axis Throrem"];
+	//lecture 28
+	similar[label="Similar"];
+	Jordan_Form[label="Jordan Form"];
+	//lecture 29
+	singular_value_decomposition[label="Singular Value Decomposition"];
+	//lecture 30
+	linear_transformation[label="Linear Transformation"];
+	coordinates[label="Coordinates"];
+	rotation[label="Rotation"];
+
+
+
+	edge[]
+	//lecture 1
+	ax_equ_b->row_picture;
+	row_picture->column_picture->linear_combination;
+	row_picture->matrix;
+	//lecture 2
+	ax_equ_b->eliminate;
+	eliminate->pivote;
+	eliminate->pemutation;
+	eliminate->ea_equ_u;
+	eliminate->back_substitation;
+	column_picture->column_model;
+	row_picture->row_model;
+
+	//lecture 3
+	column_model->multiplication;
+	row_model->multiplication;
+	matrix->block->multiplication;
+	multiplication->inverse;
+	inverse->singular;
+	inverse->Gauss_Jordan;
+	//lecture 4
+	inverse->a_equ_lu;
+	ea_equ_u->a_equ_lu->a_equ_ldu;
+	//lecture 5
+	transpose->symmetric;
+	space->vector_space->r_n;
+	space->subspace;
+	//lecture 6
+	//lecture 7
+	pivote->rank_->free_column;
+	pivote->pivot_column;
+	eliminate->pivot_column->free_column;
+	free_column->pivot_column;
+	eliminate->rx_equ_0;
+	ax_equ_0->ux_equ_0->rx_equ_0;
+
+	//lecture 8
+	ax_equ_b->ax_equ_0;
+	ax_equ_b->solution;
+	//lecture 9
+	linear_combination->dependence;
+	linear_combination->independence;
+	linear_combination->span->basis->dimension;
+	span->space;
+	//lecture 10
+	subspace->matrix_subspace;
+	matrix->matrix_subspace;
+	
+
+	
+		
+	//lecture 14
+	column_picture->vector->dot_product->orthogonal->orthogonal_subspace;
+
+	//lecture 15
+	orthogonal->projection->projection_matrix->a_t_a->least_square;
+	//lecture 17
+	orthogonal->orthogonal_matrix_q->a_equ_q_r->gram_schmidt->basis;
+
+	//lecture 18
+	determination->cofactor_formular;
+
+	//lecture 20
+	determination->singular;
+	determination->inverse;
+	//lecture 21 
+	determination->eigenvalue->eigenvector;
+	eigenvalue->trace;
+	//lecture 22
+	eigenvector->diagonal_matrix
+	//lecture 23
+	//lecture 24
+	//lecture 25
+	symmetric->positive_definite_matrix;
+	determination->positive_definite_matrix;
+	eigenvector->positive_definite_matrix;
+	//lecture 26
+	//lecture 27
+	positive_definite_matrix->principal_axis_theorem;
+	//lecture 28
+	positive_definite_matrix->similar->Jordan_Form;
+	//lecture 29
+	row_space->singular_value_decomposition;
+	column_space->singular_value_decomposition;
+	null_space->singular_value_decomposition;
+	null_space_a_t->singular_value_decomposition;
+	//lecture 30
+	linear_transformation->matrix;
+	linear_transformation->coordinates;
+	linear_transformation->projection;
+	linear_transformation->rotation;
+	linear_transformation->basis;
+}
