@@ -4,16 +4,14 @@ digraph{
 	dpi = 320;
 	node[shape=box]
 	//lecture 1
-
+	vector->linear_combination;
 	linear_combination[label="Linear Combination"];
 	row_picture[label="Row Picture"];
 	column_picture[label="Column Picture"];
-	matrix[label="Matrix"];
 	//lecture 2
 	eliminate[label="Eliminate"];
 	pivote[label="Pivote"];
 	pemutation[label="pemutation"];
-	back_substitation[label="Back Substitation"];
 	ea_equ_u[label="EA=U"];
 	//lecture 3
 	column_model[label="Column Model"];
@@ -29,10 +27,10 @@ digraph{
 	//lecture 5
 	transpose[label="Transpose"];
 	symmetric[label="Symmetric"];
-	r_n[label="R^n"];
+
 	space[label="Space"];
 	subspace[label="Subspace"];
-	vector_space[label="Vector Space"];
+
 	//lecture 6
 	//lecture 7
 	rank_[label="Rank"];
@@ -43,7 +41,6 @@ digraph{
 	rx_equ_0[label="RX=0"];
 	//lecture 8
 	ax_equ_b[label="AX=b"];
-	solution[label="Solution"];
 	//lecture 9
 	dependence[label="Dependence"];
 	independence[label="Independence"];
@@ -51,19 +48,18 @@ digraph{
 	basis[label="Basis"];
 	dimension[label="Dimension"];
 	//lecture 10
-	matrix_subspace[label="Matrix Subspace"];
+
 	subgraph matrix_sub_space{
 		node[shape=box,style=filled,color=gray]
 		color=red;
-		
 		row_space[label="Row Space"];
 		column_space[label="Column Space"];
 		null_space[label="Null Space"];
 		null_space_a_t[label="Null Space A\'"];
-		matrix_subspace->row_space;
-		matrix_subspace->null_space_a_t;
-		matrix_subspace->column_space;
-		matrix_subspace->null_space;
+		space->row_space;
+		space->null_space_a_t;
+		space->column_space;
+		space->null_space;
 	}
 	//lecture 14
 	vector[label="Vector"];
@@ -83,7 +79,7 @@ digraph{
 	determination[label="Determination"];
 	cofactor_formular[label="Cofactor Formular"];
 	//lecture 20
-	//lecture 21 
+	//lecture 21
 	eigenvalue[label="Eigenvalue"];
 	eigenvector[label="Eigenvector"];
 	trace[label="Trace"];
@@ -110,70 +106,68 @@ digraph{
 	edge[]
 	//lecture 1
 	ax_equ_b->row_picture;
-	row_picture->column_picture->linear_combination;
-	row_picture->matrix;
+	ax_equ_b->a_t_a;
+	ax_equ_b->column_picture;
+
 	//lecture 2
 	ax_equ_b->eliminate;
 	eliminate->pivote;
 	eliminate->pemutation;
 	eliminate->ea_equ_u;
-	eliminate->back_substitation;
-	column_picture->column_model;
-	row_picture->row_model;
+
 
 	//lecture 3
-	column_model->multiplication;
-	row_model->multiplication;
-	matrix->block->multiplication;
+	ax_equ_b->multiplication;
+	multiplication->column_model;
+	multiplication->row_model;
+	multiplication->block;
 	multiplication->inverse;
-	inverse->singular;
 	inverse->Gauss_Jordan;
 	//lecture 4
 	inverse->a_equ_lu;
 	ea_equ_u->a_equ_lu->a_equ_ldu;
 	//lecture 5
-	transpose->symmetric;
-	space->vector_space->r_n;
+	ax_equ_b->transpose->symmetric;
 	space->subspace;
 	//lecture 6
 	//lecture 7
 	pivote->rank_->free_column;
-	pivote->pivot_column;
+
 	eliminate->pivot_column->free_column;
-	free_column->pivot_column;
-	eliminate->rx_equ_0;
+
 	ax_equ_0->ux_equ_0->rx_equ_0;
 
 	//lecture 8
 	ax_equ_b->ax_equ_0;
-	ax_equ_b->solution;
 	//lecture 9
 	linear_combination->dependence;
 	linear_combination->independence;
-	linear_combination->span->basis->dimension;
+	linear_combination->span;
+	linear_combination->basis->dimension
+	ax_equ_b->linear_combination;
 	span->space;
 	//lecture 10
 	subspace->matrix_subspace;
-	matrix->matrix_subspace;
-	
 
-	
-		
+
+
+
 	//lecture 14
-	column_picture->vector->dot_product->orthogonal->orthogonal_subspace;
+	vector->dot_product->orthogonal->orthogonal_subspace;
 
 	//lecture 15
-	orthogonal->projection->projection_matrix->a_t_a->least_square;
+	orthogonal->projection->projection_matrix;
+	a_t_a->projection_matrix;
+	a_t_a->least_square;
 	//lecture 17
-	orthogonal->orthogonal_matrix_q->a_equ_q_r->gram_schmidt->basis;
+	orthogonal->orthogonal_matrix_q->a_equ_q_r->gram_schmidt;
 
 	//lecture 18
 	determination->cofactor_formular;
 
 	//lecture 20
 	determination->singular;
-	determination->inverse;
-	//lecture 21 
+	//lecture 21
 	determination->eigenvalue->eigenvector;
 	eigenvalue->trace;
 	//lecture 22
@@ -195,9 +189,8 @@ digraph{
 	null_space->singular_value_decomposition;
 	null_space_a_t->singular_value_decomposition;
 	//lecture 30
-	linear_transformation->matrix;
+	ax_equ_b->linear_transformation;
 	linear_transformation->coordinates;
 	linear_transformation->projection;
 	linear_transformation->rotation;
-	linear_transformation->basis;
 }
