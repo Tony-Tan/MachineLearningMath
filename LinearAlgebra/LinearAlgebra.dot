@@ -4,7 +4,7 @@ digraph{
 	dpi = 320;
 	node[shape=box]
 	//lecture 1
-	vector->linear_combination;
+	lengths[label="Lengths"];
 	linear_combination[label="Linear Combination"];
 	row_picture[label="Row Picture"];
 	column_picture[label="Column Picture"];
@@ -105,10 +105,11 @@ digraph{
 
 	edge[]
 	//lecture 1
+	vector->linear_combination;
 	ax_equ_b->row_picture;
 	ax_equ_b->a_t_a;
 	ax_equ_b->column_picture;
-
+	dot_product->lengths;
 	//lecture 2
 	ax_equ_b->eliminate;
 	eliminate->pivote;
@@ -164,7 +165,7 @@ digraph{
 	determination->cofactor_formular;
 
 	//lecture 20
-	determination->singular;
+	//singular->determination;
 	//lecture 21
 	determination->eigenvalue->eigenvector;
 	eigenvalue->trace;
