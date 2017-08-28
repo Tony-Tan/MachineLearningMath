@@ -22,13 +22,14 @@ digraph ML_Math{           //设置分辨率
 		statistics[label="数理统计\n☆☆☆☆☆"];
 		random_process[label="随机过程\n☆☆☆☆"];
 		information_theory[label="信息论\n☆☆☆☆"];
+		topology[label="拓扑学\n☆☆"]
 		target[shape=box,label="Machine Learning",color = gray,style=filled];
 	}
 	{
 		{rank=same;"STAGE 0";set_theory;}
 		{rank=same;"STAGE 1";cal;linear_algebra;}
 		{rank=same;"STAGE 2";complex_fun;analysis;diff_equation;}
-		{rank=same;"STAGE 3";real_analysis;probability;}
+		{rank=same;"STAGE 3";real_analysis;probability;topology}
 		{rank=same;"STAGE 4";function_analysis;measurement_theory;statistics;information_theory;}
 		{rank=same;"STAGE 5";convex_opt;random_process;}
 	}
@@ -45,6 +46,7 @@ digraph ML_Math{           //设置分辨率
 		cal->complex_fun;
 		cal->convex_opt;
 		analysis->real_analysis;
+		analysis->topology;
 		real_analysis->function_analysis;
 		function_analysis->convex_opt;
 		function_analysis->measurement_theory;
