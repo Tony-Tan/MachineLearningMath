@@ -4,23 +4,23 @@ digraph{
 	dpi = 320;
 	node[shape=box]
 	//lecture 1
-	lengths[label="Lengths"];
-	linear_combination[label="Linear Combination"];
-	row_picture[label="Row Picture"];
-	column_picture[label="Column Picture"];
+	lengths[label="Lengths",style=filled,color=gray];
+	linear_combination[label="Linear Combination",style=filled,color=gray];
+	row_picture[label="Row Picture",style=filled,color=gray];
+	column_picture[label="Column Picture",style=filled,color=gray];
 	//lecture 2
-	eliminate[label="Eliminate"];
-	pivote[label="Pivote"];
-	pemutation[label="pemutation"];
-	ea_equ_u[label="EA=U"];
+	eliminate[label="Eliminate",style=filled,color=gray];
+	pivote[label="Pivote",style=filled,color=gray];
+	pemutation[label="pemutation",style=filled,color=gray];
+	ea_equ_u[label="EA=U",style=filled,color=gray];
 	//lecture 3
-	column_model[label="Column Model"];
-	row_model[label="Row Model"];
-	block[label="Block"];
-	multiplication[label="Multiplication"]
-	inverse[label="Inverse"];
-	singular[label="Singular"];
-	Gauss_Jordan[label="Gauss Jordan"];
+	column_model[label="Column Model",style=filled,color=gray];
+	row_model[label="Row Model",style=filled,color=gray];
+	block[label="Block",style=filled,color=gray];
+	multiplication[label="Multiplication",style=filled,color=gray]
+	inverse[label="Inverse",style=filled,color=gray];
+	singular[label="Singular",style=filled,color=gray];
+	Gauss_Jordan[label="Gauss Jordan",style=filled,color=gray];
 	//lecture 4
 	a_equ_lu[label="A=LU"];
 	a_equ_ldu[label="A=LDU"];
@@ -40,7 +40,7 @@ digraph{
 	ux_equ_0[label="UX=0"];
 	rx_equ_0[label="RX=0"];
 	//lecture 8
-	ax_equ_b[label="AX=b"];
+	ax_equ_b[label="AX=b",style=filled,color=gray];
 	//lecture 9
 	dependence[label="Dependence"];
 	independence[label="Independence"];
@@ -50,7 +50,7 @@ digraph{
 	//lecture 10
 
 	subgraph matrix_sub_space{
-		node[shape=box,style=filled,color=gray]
+		node[shape=box,style=filled,color=green]
 		color=red;
 		row_space[label="Row Space"];
 		column_space[label="Column Space"];
@@ -62,10 +62,10 @@ digraph{
 		space->null_space;
 	}
 	//lecture 14
-	vector[label="Vector"];
+	vector[label="Vector",style=filled,color=gray];
 	orthogonal[label="Orthogonal"];
 	orthogonal_subspace[label="Orthogonal Subspace"];
-	dot_product[label="Dot Product"];
+	dot_product[label="Dot Product",style=filled,color=gray];
 	//lecture 15
 	projection[label="Projection"];
 	projection_matrix[label="Projection Matrix"];
@@ -115,10 +115,11 @@ digraph{
 	eliminate->pivote;
 	eliminate->pemutation;
 	eliminate->ea_equ_u;
-
+	eliminate->singular;
 
 	//lecture 3
 	ax_equ_b->multiplication;
+	ax_equ_b->inverse->singular;
 	multiplication->column_model;
 	multiplication->row_model;
 	multiplication->block;
@@ -140,8 +141,8 @@ digraph{
 	//lecture 8
 	ax_equ_b->ax_equ_0;
 	//lecture 9
-	ax_equ_0->dependence->singular;
-	ax_equ_0->independence->inverse;
+	ax_equ_0->dependence;
+	ax_equ_0->independence;
 	linear_combination->span;
 	linear_combination->basis->dimension
 	linear_combination->ax_equ_b;
