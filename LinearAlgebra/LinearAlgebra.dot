@@ -22,29 +22,29 @@ digraph{
 	singular[label="Singular",style=filled,color=gray];
 	Gauss_Jordan[label="Gauss Jordan",style=filled,color=gray];
 	//lecture 4
-	a_equ_lu[label="A=LU"];
-	a_equ_ldu[label="A=LDU"];
+	a_equ_lu[label="A=LU",style=filled,color=gray];
+	a_equ_ldu[label="A=LDU",style=filled,color=gray];
 	//lecture 5
-	transpose[label="Transpose"];
-	symmetric[label="Symmetric"];
+	transpose[label="Transpose",style=filled,color=gray];
+	symmetric[label="Symmetric",style=filled,color=gray];
 
-	space[label="Space"];
-	subspace[label="Subspace"];
+	space[label="Space",style=filled,color=gray];
+	subspace[label="Subspace",style=filled,color=gray];
 
 	//lecture 6
 	//lecture 7
 	rank_[label="Rank"];
-	pivot_column[label="Pivot Column"];
-	free_column[label="Free Column"];
-	ax_equ_0[label="AX=0"];
-	ux_equ_0[label="UX=0"];
-	rx_equ_0[label="RX=0"];
+	pivot_column[label="Pivot Column",style=filled,color=gray];
+	free_column[label="Free Column",style=filled,color=gray];
+	ax_equ_0[label="AX=0",style=filled,color=gray];
+	ux_equ_0[label="UX=0",style=filled,color=gray];
+	rx_equ_0[label="RX=0",style=filled,color=gray];
 	//lecture 8
-	ax_equ_b[label="AX=b",style=filled,color=gray];
+	ax_equ_b[label="AX=b",style=filled,color=grey50];
 	//lecture 9
 	dependence[label="Dependence"];
 	independence[label="Independence"];
-	span[label="Span"];
+	span[label="Span",style=filled,color=gray];
 	basis[label="Basis"];
 	dimension[label="Dimension"];
 	//lecture 10
@@ -54,7 +54,7 @@ digraph{
 		color=red;
 		row_space[label="Row Space"];
 		column_space[label="Column Space"];
-		null_space[label="Null Space"];
+		null_space[label="Null Space",style=filled,color=yellow];
 		null_space_a_t[label="Null Space A\'"];
 		space->row_space;
 		space->null_space_a_t;
@@ -139,7 +139,7 @@ digraph{
 	ax_equ_0->ux_equ_0->rx_equ_0;
 
 	//lecture 8
-	ax_equ_b->ax_equ_0;
+	null_space->ax_equ_0;
 	//lecture 9
 	ax_equ_0->dependence;
 	ax_equ_0->independence;
