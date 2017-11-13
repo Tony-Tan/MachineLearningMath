@@ -56,7 +56,8 @@ digraph{
 	subspace->null_space_a_t;
 	subspace->column_space;
 	subspace->null_space;
-	subgraph matrix_sub_space{
+	subgraph cluster_sub_space{
+		bgcolor="mintcream";
 		label="Matrix Subspace"
 		color=green;
 		row_space;column_space;null_space;null_space_a_t;

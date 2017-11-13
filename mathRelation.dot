@@ -8,21 +8,21 @@ digraph ML_Math{           //设置分辨率
 	{
 		node[shape=plaintext,fontname="SimSon"]
 
-		set_theory[label="集合论\n☆☆☆☆"];
-		cal[label="微积分\n☆☆☆☆☆"];
-		complex_fun[label="复变函数\n☆☆"];
-		linear_algebra[label="线性代数\n☆☆☆☆☆"];
-		analysis[label="数学分析\n☆☆☆"];
-		real_analysis[label="实变函数\n☆☆☆"];
-		function_analysis[label="泛函分析\n☆☆"];
-		diff_equation[label="微分方程\n☆☆☆☆"];
-		convex_opt[label="凸优化\n☆☆☆☆"];
-		measurement_theory[label="测度论\n☆"];
-		probability[label="概率论\n☆☆☆☆☆"];
-		statistics[label="数理统计\n☆☆☆☆☆"];
-		random_process[label="随机过程\n☆☆☆☆"];
-		information_theory[label="信息论\n☆☆☆☆"];
-		topology[label="拓扑学\n☆☆"]
+		set_theory[label="Set Theory\n☆☆☆☆"];
+		cal[label="Calculus\n☆☆☆☆☆"];
+		complex_fun[label="Complex Function\n☆☆"];
+		linear_algebra[label="Linear Algebra\n☆☆☆☆☆"];
+		analysis[label="Ananlysis\n☆☆☆"];
+		real_analysis[label="Real Variable Function\n☆☆☆"];
+		function_analysis[label="Function Analysis\n☆☆"];
+		diff_equation[label="Differential Equation\n☆☆☆☆"];
+		convex_opt[label="Convex Optimization\n☆☆☆☆"];
+		measurement_theory[label="Measurement Theory\n☆"];
+		probability[label="Probability\n☆☆☆☆☆"];
+		statistics[label="Statistics\n☆☆☆☆☆"];
+		random_process[label="Random Process\n☆☆☆☆"];
+		information_theory[label="Information Theory\n☆☆☆☆"];
+		topology[label="Topology\n☆☆"]
 		target[shape=box,label="Machine Learning",color = gray,style=filled];
 	}
 	{
