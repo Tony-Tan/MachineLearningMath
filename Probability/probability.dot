@@ -1,0 +1,119 @@
+digraph g
+{
+  dpi = 320;
+  compound=true;
+  rankdir=LR;
+//1.1
+  probability_[shape=Mrecord label="Probability" style=filled];
+  experiment_[shape=Mrecord label="Experiment" style=filled];
+  event_[shape=Mrecord label="Event" style=filled];
+  statistics_definition_[shape=Mrecord label="Statistics Definition" style=filled];
+  axioms_definition_[shape=Mrecord label="Axioms Definition" style=filled];
+  probability_->experiment_;
+  probability_->event_;
+  probability_->statistics_definition_;
+  probability_->axioms_definition_;
+//1.2
+  classical_probability_[shape=Mrecord label="Classical Probability" style=filled];
+  classical_probability_calculus_[shape=Mrecord label="Classical Probability Calculus" style=filled];
+  permutation_[shape=Mrecord label="Permutation" style=filled];
+  combination_[shape=Mrecord label="Combination" style=filled];
+  probability_->classical_probability_->classical_probability_calculus_->permutation_;
+  classical_probability_calculus_->combination_;
+//1.3
+  event_calculus_[shape=Mrecord label="Event Calculus" style=filled];
+  subgraph cluster_event_calculus {
+
+      bgcolor="mintcream";
+      implication_[shape=Mrecord label="Implication" style=filled];
+      contain_[shape=Mrecord label="Contain" style=filled];
+      equivalent_[shape=Mrecord label="Equivalent" style=filled];
+      mutually_exclusive_[shape=Mrecord label="Mutually Exclusive" style=filled];
+      complementation_[shape=Mrecord label="Complementation" style=filled];
+      union_[shape=Mrecord label="Union" style=filled];
+      intersection_[shape=Mrecord label="Intersection" style=filled];
+      difference_[shape=Mrecord label="Difference" style=filled];
+    };
+  //event_calculus_->implication_;
+  //event_calculus_->contain_;
+  //event_calculus_->equivalent_;
+  //event_calculus_->mutually_exclusive_;
+  event_calculus_->complementation_[lhead=cluster_event_calculus];
+  //event_calculus_->union_;
+  //event_calculus_->intersection_;
+  //event_calculus_->difference_;
+  mutually_exclusive_->complete_events_group_->total_probability_;
+
+  addition_theorem_[shape=Mrecord label="Addition Theorem" style=filled];
+  multiplication_theorem_[shape=Mrecord label="Multiplication Theorem" style=filled];
+  event_independence_[shape=Mrecord label="Event Independence" style=filled];
+  complete_events_group_[shape=Mrecord label="Complete Events Group" style=filled];
+  total_probability_[shape=Mrecord label="Total Probability" style=filled];
+  conditional_probability_[shape=Mrecord label="Conditional Probability" style=filled];
+  Bayes_rule_[shape=Mrecord label="Bayes\’ Rule" style=filled];
+  event_->event_calculus_;
+  event_->addition_theorem_->total_probability_;
+  event_->conditional_probability_->total_probability_->Bayes_rule_;
+  event_->event_independence_->multiplication_theorem_;
+//2.1
+  random_variable_V_R_[shape=Mrecord label="Random Variable R.V." style=filled];
+  subgraph cluster_variable{
+    bgcolor="moccasin";
+    discrete_R_V_[shape=Mrecord label="Discrete R.V." style=filled];
+    continuous_R_V_[shape=Mrecord label="Continuous R.V." style=filled];
+  }
+  probability_distribution_V_R_[shape=Mrecord label="Probability Distribution" style=filled];
+  one_dimension_V_R_[shape=Mrecord label="1 Dimension" style=filled];
+  probability_->random_variable_V_R_->one_dimension_V_R_;
+  one_dimension_V_R_->discrete_R_V_[lhead=cluster_variable];
+  one_dimension_V_R_->probability_distribution_V_R_;
+//2.2
+  two_dimension_V_R_[shape=Mrecord label="Random Vector" style=filled];
+  marginal_probability_distribution_V_R_[shape=Mrecord label="V.R. Marginal Probability Distribution" style=filled];
+  random_variable_V_R_->two_dimension_V_R_->marginal_probability_distribution_V_R_;
+  two_dimension_V_R_->discrete_R_V_[lhead=cluster_variable];
+  two_dimension_V_R_->probability_distribution_V_R_;
+
+//2.3
+  conditional_distribution_V_R_[shape=Mrecord label="V.R. Conditional Distribution" style=filled];
+  joint_probability_density_function_V_R_[shape=Mrecord label="V.R. joint probability Density Function" style=filled];
+  independence_V_R_[shape=Mrecord label="V.R. Independence" style=filled];
+  random_variable_V_R_->conditional_distribution_V_R_;
+  conditional_distribution_V_R_->continuous_R_V_[lhead=cluster_variable];
+  random_variable_V_R_->joint_probability_density_function_V_R_;
+  random_variable_V_R_->independence_V_R_;
+//2.4
+  function_V_R_[shape=Mrecord label="V.R. Function " style=filled];
+  subgraph cluster_function{
+    bgcolor="mintcream";
+    division_V_R_[shape=Mrecord label="V.R. division" style=filled];
+    addition_V_R_[shape=Mrecord label="V.R. addition" style=filled];
+  }
+  random_variable_V_R_->function_V_R_;
+  function_V_R_->continuous_R_V_[lhead=cluster_variable];
+  function_V_R_->addition_V_R_;
+  function_V_R_->division_V_R_;
+//3.1
+  numerical_characteristics_V_R_[shape=Mrecord label="V.R. numerical characteristics" style=filled];
+  subgraph cluster_numerical_characteristics{
+    bgcolor="mintcream";
+    expectation_V_R_[shape=Mrecord label="Expectation" style=filled];
+    conditional_expectation_V_R_[shape=Mrecord label="conditional Expectation" style=filled];
+    median_V_R_[shape=Mrecord label="Median" style=filled];
+    variance_V_R_[shape=Mrecord label="variance" style=filled];
+    moment_V_R_[shape=Mrecord label="moment" style=filled];
+    covariance_V_R_[shape=Mrecord label="covariance" style=filled];
+    correlation_coefficient_V_R_[shape=Mrecord label="correlation coefficient" style=filled];
+  }
+  law_of_large_numbers_V_R_[shape=Mrecord label="Law of Large Numbers" style=filled];
+  central_limit_theorem_V_R_[shape=Mrecord label="central limit theorem" style=filled];
+  random_variable_V_R_->numerical_characteristics_V_R_;
+  numerical_characteristics_V_R_->law_of_large_numbers_V_R_;
+  numerical_characteristics_V_R_->central_limit_theorem_V_R_;
+  //numerical_characteristics_V_R_->median_V_R_[lhead=cluster_numerical_characteristics];
+  expectation_V_R_->conditional_expectation_V_R_;
+  //numerical_characteristics_V_R_->variance_V_R_;
+  numerical_characteristics_V_R_->moment_V_R_[lhead=cluster_numerical_characteristics];
+  //numerical_characteristics_V_R_->covariance_V_R_;
+  //numerical_characteristics_V_R_->correlation_coefficient_V_R_;
+}
