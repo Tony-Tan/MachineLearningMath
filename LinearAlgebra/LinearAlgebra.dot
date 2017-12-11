@@ -48,10 +48,10 @@ digraph{
 	basis[label="Basis",style=filled,color=gray];
 	dimension[label="Dimension",style=filled,color=gray];
 	//lecture 10
-	row_space[label="Row Space",style=filled,color=green];
-	column_space[label="Column Space",style=filled,color=green];
-	null_space[label="Null Space",style=filled,color=green];
-	null_space_a_t[label="Null Space A\'",style=filled,color=green];
+	row_space[label="Row Space",style=filled,color=gray];
+	column_space[label="Column Space",style=filled,color=gray];
+	null_space[label="Null Space",style=filled,color=gray];
+	null_space_a_t[label="Null Space A\'",style=filled,color=gray];
 	subspace->row_space;
 	subspace->null_space_a_t;
 	subspace->column_space;
@@ -70,39 +70,39 @@ digraph{
 	orthogonal_subspace[label="Orthogonal Subspace",style=filled,color=gray];
 	dot_product[label="Dot Product",style=filled,color=gray];
 	//lecture 15
-	projection[label="Projection"];
-	projection_matrix[label="Projection Matrix"];
+	projection[label="Projection",style=filled,color=gray];
+	projection_matrix[label="Projection Matrix",style=filled,color=gray];
 	least_square[label="Least Square",style=filled,color=gray];
 	a_t_a[label="A\'A",style=filled,color=gray];
 	//lecture 17
-	orthogonal_matrix_q[label="Orthogonal Matrix Q"];
-	a_equ_q_r[label="A=QR"];
-	gram_schmidt[label="Gram-Schmidt"];
+	orthogonal_matrix_q[label="Orthogonal Matrix Q",style=filled,color=gray];
+	a_equ_q_r[label="A=QR",style=filled,color=gray];
+	gram_schmidt[label="Gram-Schmidt",style=filled,color=gray];
 	//lecture 18
-	determination[label="Determination"];
-	cofactor_formular[label="Cofactor Formular"];
+	determination[label="Determination",style=filled,color=gray];
+	cofactor_formular[label="Cofactor Formular",style=filled,color=gray];
 	//lecture 20
 	//lecture 21
-	eigenvalue[label="Eigenvalue"];
-	eigenvector[label="Eigenvector"];
-	trace[label="Trace"];
-	diagonal_matrix[label="Diagonal Matrix"];
+	eigenvalue[label="Eigenvalue",style=filled,color=gray];
+	eigenvector[label="Eigenvector",style=filled,color=gray];
+	trace[label="Trace",style=filled,color=gray];
+	diagonal_matrix[label="Diagonal Matrix",style=filled,color=gray];
 	//lecture 23
 	//lecture 24
 	//lecture 25
-	positive_definite_matrix[label="Positive Definite Matrix"];
+	positive_definite_matrix[label="Positive Definite Matrix",style=filled,color=gray];
 	//lecture 26
 	//lecture 27
-	principal_axis_theorem[label="Principal Axis Throrem"];
+	principal_axis_theorem[label="Principal Axis Throrem",style=filled,color=gray];
 	//lecture 28
-	similar[label="Similar"];
-	Jordan_Form[label="Jordan Form"];
+	similar[label="Similar",style=filled,color=gray];
+	Jordan_Form[label="Jordan Form",style=filled,color=gray];
 	//lecture 29
-	singular_value_decomposition[label="Singular Value Decomposition"];
+	singular_value_decomposition[label="Singular Value Decomposition",style=filled,color=gray];
 	//lecture 30
-	linear_transformation[label="Linear Transformation"];
-	coordinates[label="Coordinates"];
-	rotation[label="Rotation"];
+	linear_transformation[label="Linear Transformation",style=filled,color=gray];
+	coordinates[label="Coordinates",style=filled,color=gray];
+	rotation[label="Rotation",style=filled,color=gray];
 
 
 
@@ -186,8 +186,9 @@ digraph{
 	column_space->singular_value_decomposition;
 	null_space->singular_value_decomposition;
 	null_space_a_t->singular_value_decomposition;
+	diagonal_matrix->singular_value_decomposition;
 	//lecture 30
-	ax_equ_b->linear_transformation;
+
 	linear_transformation->coordinates;
 	linear_transformation->projection;
 	linear_transformation->rotation;
