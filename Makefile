@@ -5,5 +5,5 @@ LinearAlgebra.png: ./LinearAlgebra/LinearAlgebra.dot
 	dot -Tpng ./LinearAlgebra/LinearAlgebra.dot -o LinearAlgebra.png
 Probability.png: ./Probability/probability.dot
 	dot -Tpng ./Probability/probability.dot -o Probability.png
-clear:
+clean:
 	rm Mathematic.png LinearAlgebra.png Probability.png
