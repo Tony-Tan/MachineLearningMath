@@ -26,10 +26,9 @@ digraph g
   probability_axiom_2[label="Probability Axiom 2"];
   probability_axiom_3[label="Probability Axiom 3"];
   probability[label="Probability"];
-  probability_theorem_1_8[label="Probability Theorem 1~8"]
   events->probability_axiom_1->probability;
   events->probability_axiom_2->probability;
-  events->probability_axiom_3->probability->probability_theorem_1_8;
+  events->probability_axiom_3->probability;
   //1.6
   finite_sample_space[label="Finite Sample Space"];
   sample_space->finite_sample_space;
@@ -88,6 +87,8 @@ digraph g
   distribution[label="Distribution(U/B/M)"]
   uniform_distribution_c[label="Uniform Distribution(C)"]
   uniform_distribution_d[label="Uniform Distribution(D)"]
+  distribution->uniform_distribution_c;
+  distribution->uniform_distribution_d;
   sample_space->random_variables;
   random_variables->distribution;
   //3.2
@@ -162,14 +163,9 @@ digraph g
   expectation->covariance->correlation;
   //4.7
   conditional_expectation[label="Conditional Expectation"]
-  conditional_mean[label="Conditional Mean"]
   conditional_quantities[label="Conditional Quantities"]
-  law_of_total_probability_for_expectation[label="Law of Total Probability for Expectation"]
-  law_of_total_probability_for_variances[label="Law of Total Probability for Variances"]
   expectation->conditional_expectation->conditional_quantities;
-  expectation->conditional_mean;
-  conditional_expectation->law_of_total_probability_for_expectation;
-  conditional_expectation->law_of_total_probability_for_variances;
+
   //4.8
   utility_function[label="Utility Function"]
   maxing_expected_utility[label="Maxing Expected Utility"]
