@@ -2,9 +2,11 @@ digraph g
 {
   dpi = 320;
   compound=true;
+  rankdir=LR;
   node[shape=box]
   //1.1
   probability_history[label="Probability History"];
+  probability_history->probability;
   //1.2
   frequency_interpretation[label="Frequency Interpretation"];
   classical_interpretation[label="Classical Interpretation"];
@@ -87,8 +89,8 @@ digraph g
   distribution[label="Distribution(U/B/M)"]
   uniform_distribution_c[label="Uniform Distribution(C)"]
   uniform_distribution_d[label="Uniform Distribution(D)"]
-  distribution->uniform_distribution_c;
-  distribution->uniform_distribution_d;
+  continuity_distribution->uniform_distribution_c;
+  discrete_distribution->uniform_distribution_d;
   sample_space->random_variables;
   random_variables->distribution;
   //3.2
@@ -126,20 +128,20 @@ digraph g
   Markov_chains[label="Markov Chains"]
   conditional_probability->Markov_chains;
   //4.1
-  expectation[label="Expectation"]
-  mean[label="Mean"]
+  expectation[label="Expectation/Mean"]
+
 
   distribution->expectation;
-  expectation->mean;
+
   //4.2
   nonnegative_distribution[label="Nonnegative Distribution"]
-  distribution->nonnegative_distribution;
+  discrete_distribution->nonnegative_distribution;
   //4.3
   variance[label="Variance"]
   standard_deviation[label="Standard Deviation"]
-  inter_quartile_range[label="inter Quartile Range"]
-  expectation->variance->inter_quartile_range;
-  expectation->standard_deviation;
+  interquartile_range[label="Interquartile Range"]
+  expectation->variance->interquartile_range;
+  variance->standard_deviation;
   //4.4
   moment[label="Moment"]
   central_moment[label="Central Moment"]
@@ -154,8 +156,7 @@ digraph g
   mean_absolute_error[label="Mean Absolute Error"]
   multiple_medians[label="Multiple Medians"]
   random_variables->median;
-  mean->mean_squared_error;
-  mean->mean_absolute_error;
+  expectation->mean_squared_error->mean_absolute_error;
   median->multiple_medians;
   //4.6
   covariance[label="Covariance"]
@@ -167,9 +168,8 @@ digraph g
   expectation->conditional_expectation->conditional_quantities;
 
   //4.8
-  utility_function[label="Utility Function"]
-  maxing_expected_utility[label="Maxing Expected Utility"]
-  distribution->utility_function->maxing_expected_utility;
+
+
   //5.1
   Bernoulli_distribution[label="Bernoulli Distribution"]
   binomial_distribution[label="Binomial Distribution"]
@@ -189,12 +189,12 @@ digraph g
   //Pareto_distribution[label="Pareto Distribution"]
   //5.2
 
-  distribution->Bernoulli_distribution->binomial_distribution;
+  discrete_distribution->Bernoulli_distribution->binomial_distribution;
   Bernoulli_distribution->Bernoulli_trials;
   //5.3
   Bernoulli_distribution->hypergeometric_distribution;
   hypergeometric_distribution->binomial_distribution;
-  sample_methods->hypergeometric_distribution;
+  //sample_methods->hypergeometric_distribution;
   //5.4
 
   binomial_distribution->poisson_distribution->poisson_processes;
@@ -202,9 +202,10 @@ digraph g
   Bernoulli_trials->negative_binomial_distribution->geometric_distribution;
   //5.6
 
-  distribution->normal_distribution->lognormal_distribution;
+  continuity_distribution->normal_distribution->lognormal_distribution;
   //5.7
-  distribution->gamma_distribution->exponential_distribution;
+  continuity_distribution->gamma_distribution;
+  continuity_distribution->exponential_distribution;
   //5.8
   gamma_distribution->beta_distribution;
   //5.9
@@ -215,16 +216,21 @@ digraph g
   Markov_Inequality[label="Markov Inequality"]
   Chebyshev_Inequality[label="Chebyshev Inequality"]
   law_of_large_number[label="Law of Large Number"]
-  mean->Markov_Inequality->Chebyshev_Inequality->law_of_large_number;
+  expectation->Markov_Inequality->Chebyshev_Inequality->law_of_large_number;
   //6.3
   the_central_limit_theorem[label="The Central Limit Theorem"]
-  convergence[label="Convergence"]
-  delta_method[label="Delta Method"]
-  random_variables->convergence->delta_method;
+  //convergence[label="Convergence"]
+  //delta_method[label="Delta Method"]
+  //random_variables->convergence->delta_method;
   random_variables->the_central_limit_theorem;
   //6.4
+  discrete_distribution[label="Discrete Distribution"];
+  distribution->discrete_distribution;
+  continuity_distribution[label="Continuity Distribution"];
+  distribution->continuity_distribution;
   subgraph cluster_discrete
   {
+    discrete_distribution;
     nonnegative_distribution;
     uniform_distribution_d;
     Bernoulli_distribution;
@@ -238,14 +244,14 @@ digraph g
   }
   subgraph cluster_continuity
   {
+    continuity_distribution;
     uniform_distribution_c;
     normal_distribution;
     lognormal_distribution;
     gamma_distribution;
     exponential_distribution;
     beta_distribution;
-    Weibull_distribution;
-    Pareto_distribution;
+
 
   }
 }
