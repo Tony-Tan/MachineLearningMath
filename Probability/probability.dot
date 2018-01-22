@@ -95,7 +95,7 @@ digraph g
   random_variables->distribution;
   //3.2
   probability_density_function[label="Probability Density Function(C)"]
-  distribution->probability_density_function;
+  continuity_distribution->probability_density_function;
   //3.3
   cumulative_distribution_function[label="Cumulative Distribution Function(C/D)"]
   quantile_function[label="Quantile Function(C/D)"]
@@ -251,7 +251,7 @@ digraph g
     gamma_distribution;
     exponential_distribution;
     beta_distribution;
-
+    probability_density_function;
 
   }
 }
