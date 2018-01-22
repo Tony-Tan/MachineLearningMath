@@ -8,4 +8,4 @@ This project is write by dot language,so you need graphiz on your computer,and i
 The linear algebra is based on MIT 18.06 open course,whose teacher is Gilbert Strang,the best teacher all over the world.
 ## Probability
 ![probability](https://github.com/Tony-Tan/MachineLearningMath/raw/master/Probability.png)
-《概率与数理统计》-陈希孺
+《Probability and Statistics》-M.H.DeGroot

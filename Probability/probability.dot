@@ -19,7 +19,8 @@ digraph g
   //1.4
   sample_space[label="Sample Space"];
   set_theorem[label="Set Theorem"];
-  experiments->sample_space->set_theorem;
+  experiments->sample_space
+  set_theorem->sample_space;
   //1.5
   probability_axiom_1[label="Probability Axiom 1"];
   probability_axiom_2[label="Probability Axiom 2"];
@@ -58,7 +59,6 @@ digraph g
   //1.11
   statistical_swindles[label="Statistical Swindles"];
   probability->statistical_swindles;
-
   //2.1
   conditional_probability[label="Conditional Probability"]
   multiplication_rule[label="Multiplication Rule"]
@@ -71,11 +71,9 @@ digraph g
   //2.2
   independent_events[label="Independent Events"]
   independent_of_complement[label="Independent of Complement"]
-  the_collector_s_problem[label="the Collector\'s Problem"]
   conditional_independent[label="Conditional Independent"]
   events->independent_events;
   conditional_probability->independent_events;
-  independent_events->the_collector_s_problem;
   independent_events->independent_of_complement;
   independent_events->conditional_independent;
   //2.3
@@ -85,73 +83,43 @@ digraph g
   conditional_probability->Bayes_s_Theorem->conditional_independent_events;
   independent_events->conditional_independent_events;
   //2.4
-  Gambler_s_Ruin[label="Gambler\'s Ruin"]
-  conditional_probability->Gambler;
   //3.1
   random_variables[label="Random Variables"]
-  distribution[label="Distribution"]
-  uniform_distribution_d[label="Uniform Distribution"]
+  distribution[label="Distribution(U/B/M)"]
+  uniform_distribution_c[label="Uniform Distribution(C)"]
+  uniform_distribution_d[label="Uniform Distribution(D)"]
   sample_space->random_variables;
   random_variables->distribution;
-
   //3.2
-  probability_density_function_c[label="the Probability Density Function"]
-  uniform_distribution_c[label="Uniform Distribution on Intervals"]
-  distribution->probability_density_function_c;
+  probability_density_function[label="Probability Density Function(C)"]
+  distribution->probability_density_function;
   //3.3
-  cumulative_distribution_function_c[label="Cumulative Distribution Function"]
-  cumulative_distribution_function_d[label="Cumulative Distribution Function"]
-  quantile_function_c[label="Quantile Function"]
-  quantile_function_d[label="Quantile Function"]
-  distribution->cumulative_distribution_function_c->quantile_function_c;
-  distribution->cumulative_distribution_function_d->quantile_function_d;
+  cumulative_distribution_function[label="Cumulative Distribution Function(C/D)"]
+  quantile_function[label="Quantile Function(C/D)"]
+  distribution->cumulative_distribution_function->quantile_function;
   //3.4
-  bivariate_distribution[label="Bivariate Distribution"]
-  joint_distribution_c[label="Joint Distribution"]
-  joint_distribution_d[label="Joint Distribution"]
-  mixed_distribution[label="Mixed Bivariate Distribution"]
-  cumulative_distribution_function_c->joint_distribution_c;
-  cumulative_distribution_function_d->joint_distribution_d;
-  cumulative_distribution_function_c->mixed_distribution;
-  cumulative_distribution_function_d->mixed_distribution;
 
   //3.5
-  marginal_distribution_c[label="Marginal Distribution"]
-  marginal_distribution_d[label="Marginal Distribution"]
+  marginal_distribution[label="Marginal Distribution(C/D)"]
   independent_random_variables[label="Independent Random Variables"]
-  distribution->marginal_distribution_c;
-  distribution->marginal_distribution_d;
-  independent_events->independent_random_variables;
   random_variables->independent_random_variables;
-
   //3.6
-  conditional_distribution_c[label="Conditional Distribution"]
-  conditional_distribution_d[label="Conditional Distribution"]
-  distribution->conditional_distribution_c;
-  distribution->conditional_distribution_d;
-  conditional_probability->conditional_distribution_c;
-  conditional_probability->conditional_distribution_d;
+  conditional_distribution[label="Conditional Distribution(C/D)"]
+  distribution->conditional_distribution;
+  //conditional_probability->conditional_distribution;
   //3.7
-  multivariate_distribution[label="Multivariate Distribution"]
+
   histograms[label="Histograms"]
-  multivariate_distribution->joint_distribution_c;
-  multivariate_distribution->joint_distribution_d;
-  multivariate_distribution->mixed_distribution;
-  multivariate_distribution->conditional_distribution_c;
-  multivariate_distribution->conditional_distribution_d;
+  distribution->marginal_distribution;
   distribution->histograms;
   //3.8
-  function_of_random_variables_c[label="Function of (a) Random Variable(s)"]
-  function_of_random_variables_d[label="Function of (a) Random Variable(s)"]
+  function_of_random_variables[label="Function of (a) Random Variable(s)"]
   integral_transformation[label="Integral Transformation"]
   derivation_transformation[label="Derivation Transformation"]
-  simulation[label="Simulation"]
-  random_variables->function_of_random_variables_c;
-  random_variables->function_of_random_variables_d;
-  function_of_random_variables_c->integral_transformation;
-  function_of_random_variables_c->derivation_transformation;
-  function_of_random_variables_c->simulation;
-  function_of_random_variables_d->simulation;
+
+  random_variables->function_of_random_variables;
+  function_of_random_variables->integral_transformation;
+  function_of_random_variables->derivation_transformation;
   //3.9
   //3.10
   Markov_chains[label="Markov Chains"]
@@ -159,19 +127,12 @@ digraph g
   //4.1
   expectation[label="Expectation"]
   mean[label="Mean"]
-  law_of_the_unconscious_statistician[label="Law of the Unconscious Statistician"]
+
   distribution->expectation;
   expectation->mean;
-  expectation->law_of_the_unconscious_statistician;
-
   //4.2
-  convex_function[label="Convex Function"]
-  Jonson_s_inequality[label="Jonson\'s Inequality"]
-  linear_function[label="Linear Function"]
   nonnegative_distribution[label="Nonnegative Distribution"]
-  expectation->convex_function;
-  expectation->Jonson_s_inequality;
-  expectation->nonnegative_distribution;
+  distribution->nonnegative_distribution;
   //4.3
   variance[label="Variance"]
   standard_deviation[label="Standard Deviation"]
@@ -179,8 +140,116 @@ digraph g
   expectation->variance->inter_quartile_range;
   expectation->standard_deviation;
   //4.4
+  moment[label="Moment"]
+  central_moment[label="Central Moment"]
+  skewness[label="Skewness"]
+  moment_generating_function[label="Moment Generating Function"]
+  expectation->moment->central_moment;
+  moment->moment_generating_function;
+  moment->skewness;
   //4.5
+  median[label="Median"]
+  mean_squared_error[label="Mean Squared Error"]
+  mean_absolute_error[label="Mean Absolute Error"]
+  multiple_medians[label="Multiple Medians"]
+  random_variables->median;
+  mean->mean_squared_error;
+  mean->mean_absolute_error;
+  median->multiple_medians;
   //4.6
+  covariance[label="Covariance"]
+  correlation[label="Correlation"]
+  expectation->covariance->correlation;
   //4.7
+  conditional_expectation[label="Conditional Expectation"]
+  conditional_mean[label="Conditional Mean"]
+  conditional_quantities[label="Conditional Quantities"]
+  law_of_total_probability_for_expectation[label="Law of Total Probability for Expectation"]
+  law_of_total_probability_for_variances[label="Law of Total Probability for Variances"]
+  expectation->conditional_expectation->conditional_quantities;
+  expectation->conditional_mean;
+  conditional_expectation->law_of_total_probability_for_expectation;
+  conditional_expectation->law_of_total_probability_for_variances;
   //4.8
+  utility_function[label="Utility Function"]
+  maxing_expected_utility[label="Maxing Expected Utility"]
+  distribution->utility_function->maxing_expected_utility;
+  //5.1
+  Bernoulli_distribution[label="Bernoulli Distribution"]
+  binomial_distribution[label="Binomial Distribution"]
+  hypergeometric_distribution[label="Hypergeometric Distribution"]
+  poisson_distribution[label="Poisson Distribution"]
+  negative_binomial_distribution[label="Negative Binomial Distribution"]
+  geometric_distribution[label="Geometric Distribution"]
+  poisson_processes[label="Poisson Processes"]
+  Bernoulli_trials[label="Bernoulli Trials"]
+
+  normal_distribution[label="Normal Distribution"]
+  lognormal_distribution[label="Lognormal Distribution"]
+  gamma_distribution[label="Gamma Distribution"]
+  exponential_distribution[label="Exponential Distribution"]
+  beta_distribution[label="beta Distribution"]
+  //Weibull_distribution[label="Weibull Distribution"]
+  //Pareto_distribution[label="Pareto Distribution"]
+  //5.2
+
+  distribution->Bernoulli_distribution->binomial_distribution;
+  Bernoulli_distribution->Bernoulli_trials;
+  //5.3
+  Bernoulli_distribution->hypergeometric_distribution;
+  hypergeometric_distribution->binomial_distribution;
+  sample_methods->hypergeometric_distribution;
+  //5.4
+
+  binomial_distribution->poisson_distribution->poisson_processes;
+  //5.5
+  Bernoulli_trials->negative_binomial_distribution->geometric_distribution;
+  //5.6
+
+  distribution->normal_distribution->lognormal_distribution;
+  //5.7
+  distribution->gamma_distribution->exponential_distribution;
+  //5.8
+  gamma_distribution->beta_distribution;
+  //5.9
+  //5.10
+  //6.1
+  //6.2
+
+  Markov_Inequality[label="Markov Inequality"]
+  Chebyshev_Inequality[label="Chebyshev Inequality"]
+  law_of_large_number[label="Law of Large Number"]
+  mean->Markov_Inequality->Chebyshev_Inequality->law_of_large_number;
+  //6.3
+  the_central_limit_theorem[label="The Central Limit Theorem"]
+  convergence[label="Convergence"]
+  delta_method[label="Delta Method"]
+  random_variables->convergence->delta_method;
+  random_variables->the_central_limit_theorem;
+  //6.4
+  subgraph cluster_discrete
+  {
+    nonnegative_distribution;
+    uniform_distribution_d;
+    Bernoulli_distribution;
+    binomial_distribution;
+    hypergeometric_distribution;
+    poisson_distribution;
+    negative_binomial_distribution;
+    geometric_distribution;
+    poisson_processes;
+    Bernoulli_trials;
+  }
+  subgraph cluster_continuity
+  {
+    uniform_distribution_c;
+    normal_distribution;
+    lognormal_distribution;
+    gamma_distribution;
+    exponential_distribution;
+    beta_distribution;
+    Weibull_distribution;
+    Pareto_distribution;
+
+  }
 }
