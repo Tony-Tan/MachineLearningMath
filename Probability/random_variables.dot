@@ -1,0 +1,15 @@
+digraph g
+{
+  dpi = 320;
+  compound=true;
+  rankdir=TB;
+  node[shape=box]
+  experiment[label="Experiment"]
+  sample_space[label="Sample Space"]
+  probability[label="Probability"]
+  random_variable[label="Random Variable"]
+  experiment->sample_space
+  sample_space->probability[label="Event"]
+  sample_space->random_variable
+  random_variable->probability[label="Probability Function/p.f."]
+}

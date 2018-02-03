@@ -8,46 +8,46 @@ digraph g
   probability_history[label="Probability History"];
   probability_history->probability;
   //1.2
-  frequency_interpretation[label="Frequency Interpretation"];
-  classical_interpretation[label="Classical Interpretation"];
-  subjective_interpretation[label="Subjective Interpretation"];
+  frequency_interpretation[label="Frequency Interpretation",style=filled,color=gray];
+  classical_interpretation[label="Classical Interpretation",style=filled,color=gray];
+  subjective_interpretation[label="Subjective Interpretation",style=filled,color=gray];
   //1.3
-  experiments[label="Experiments"];
-  events[label="Events"];
+  experiments[label="Experiments",style=filled,color=gray];
+  events[label="Events",style=filled,color=gray];
   frequency_interpretation->experiments;
   classical_interpretation->experiments;
   subjective_interpretation->experiments;
   experiments->events
   //1.4
-  sample_space[label="Sample Space"];
-  set_theorem[label="Set Theorem"];
+  sample_space[label="Sample Space",style=filled,color=gray];
+  set_theorem[label="Set Theorem",style=filled,color=gray];
   experiments->sample_space
   set_theorem->sample_space;
   //1.5
-  probability_axiom_1[label="Probability Axiom 1"];
-  probability_axiom_2[label="Probability Axiom 2"];
-  probability_axiom_3[label="Probability Axiom 3"];
-  probability[label="Probability"];
+  probability_axiom_1[label="Probability Axiom 1",style=filled,color=gray];
+  probability_axiom_2[label="Probability Axiom 2",style=filled,color=gray];
+  probability_axiom_3[label="Probability Axiom 3",style=filled,color=gray];
+  probability[label="Probability",style=filled,color=gray];
   events->probability_axiom_1->probability;
   events->probability_axiom_2->probability;
   events->probability_axiom_3->probability;
   //1.6
-  finite_sample_space[label="Finite Sample Space"];
+  finite_sample_space[label="Finite Sample Space",style=filled,color=gray];
   sample_space->finite_sample_space;
   //1.7
-  counting_methods[label="Counting Methods"];
-  multiplication[label="Multiplication"];
-  permutation[label="Permutation"];
-  stirling_s_formula[label="Stirling\'s Formula"];
+  counting_methods[label="Counting Methods",style=filled,color=gray];
+  multiplication[label="Multiplication",style=filled,color=gray];
+  permutation[label="Permutation",style=filled,color=gray];
+  stirling_s_formula[label="Stirling\'s Formula",style=filled,color=gray];
   finite_sample_space->counting_methods;
   counting_methods->multiplication;
   counting_methods->permutation;
   counting_methods->stirling_s_formula;
   //1.8
-  combination[label="Combination"];
-  sample_methods[label="Sample Methods"];
-  with_replacement[label="With Replacement"];
-  without_replacement[label="Without Replacement"];
+  combination[label="Combination",style=filled,color=gray];
+  sample_methods[label="Sample Methods",style=filled,color=gray];
+  with_replacement[label="With Replacement",style=filled,color=gray];
+  without_replacement[label="Without Replacement",style=filled,color=gray];
   counting_methods->combination->sample_methods->with_replacement;
   sample_methods->without_replacement;
   //1.9
