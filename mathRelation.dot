@@ -7,16 +7,15 @@ digraph ML_Math{           //设置分辨率
 	}
 	{
 		node[shape=plaintext,fontname="SimSon"]
-
+		analysis[label="Ananlysis\n☆☆☆☆☆"];
+		complex_fun[label="Complex Function\n☆"];
+		real_analysis[label="Real Variable Function\n☆☆☆"];
+		function_analysis[label="Function Analysis\n☆☆☆"];
 		set_theory[label="Set Theory\n☆☆☆☆"];
 		cal[label="Calculus\n☆☆☆☆☆"];
-		complex_fun[label="Complex Function\n☆☆"];
 		linear_algebra[label="Linear Algebra\n☆☆☆☆☆"];
-		analysis[label="Ananlysis\n☆☆☆"];
-		real_analysis[label="Real Variable Function\n☆☆☆"];
-		function_analysis[label="Function Analysis\n☆☆"];
-		diff_equation[label="Differential Equation\n☆☆☆☆"];
-		convex_opt[label="Convex Optimization\n☆☆☆☆"];
+		diff_equation[label="Differential Equation\n☆☆"];
+		convex_opt[label="Convex Optimization\n☆☆☆☆☆"];
 		measurement_theory[label="Measurement Theory\n☆"];
 		probability[label="Probability\n☆☆☆☆☆"];
 		statistics[label="Statistics\n☆☆☆☆☆"];
@@ -24,6 +23,12 @@ digraph ML_Math{           //设置分辨率
 		information_theory[label="Information Theory\n☆☆☆☆"];
 		topology[label="Topology\n☆☆"]
 		target[shape=box,label="Machine Learning",color = gray,style=filled];
+
+		//subgraph cluster_analysis
+		//{
+		//	label="Analysis"
+
+		//}
 	}
 	{
 		{rank=same;"STAGE 0";set_theory;}

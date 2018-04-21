@@ -51,73 +51,73 @@ digraph g
   counting_methods->combination->sample_methods->with_replacement;
   sample_methods->without_replacement;
   //1.9
-  multinomial_coefficients[label="Multinomial Coefficients"];
+  multinomial_coefficients[label="Multinomial Coefficients",style=filled,color=gray];
   combination->multinomial_coefficients;
   //1.10
-  a_union_of_events[label="A Union of Events"];
-  matching_problem[label="Matching Problem"];
+  a_union_of_events[label="A Union of Events",style=filled,color=gray];
+  matching_problem[label="Matching Problem",style=filled,color=gray];
   probability->a_union_of_events->matching_problem;
   //1.11
-  statistical_swindles[label="Statistical Swindles"];
+  statistical_swindles[label="Statistical Swindles",style=filled,color=gray];
   probability->statistical_swindles;
   //2.1
-  conditional_probability[label="Conditional Probability"]
-  multiplication_rule[label="Multiplication Rule"]
-  partitions[label="Partitions"]
-  law_of_total_probability[label="Law of Total Probability"]
+  conditional_probability[label="Conditional Probability",style=filled,color=gray]
+  multiplication_rule[label="Multiplication Rule",style=filled,color=gray]
+  partitions[label="Partitions",style=filled,color=gray]
+  law_of_total_probability[label="Law of Total Probability",style=filled,color=gray]
   events->conditional_probability;
   probability->conditional_probability->multiplication_rule;
   conditional_probability->partitions->law_of_total_probability;
   events->partitions;
   //2.2
-  independent_events[label="Independent Events"]
-  independent_of_complement[label="Independent of Complement"]
-  conditional_independent[label="Conditional Independent"]
+  independent_events[label="Independent Events",style=filled,color=gray]
+  independent_of_complement[label="Independent of Complement",style=filled,color=gray]
+  conditional_independent[label="Conditional Independent",style=filled,color=gray]
   events->independent_events;
   conditional_probability->independent_events;
   independent_events->independent_of_complement;
   independent_events->conditional_independent;
   //2.3
-  Bayes_s_Theorem[label="Bayes\' Theorem"]
-  conditional_independent_events[label="Conditional Independent Events"]
+  Bayes_s_Theorem[label="Bayes\' Theorem",style=filled,color=gray]
+  conditional_independent_events[label="Conditional Independent Events",style=filled,color=gray]
   law_of_total_probability->Bayes_s_Theorem;
   conditional_probability->Bayes_s_Theorem->conditional_independent_events;
   independent_events->conditional_independent_events;
   //2.4
   //3.1
-  random_variables[label="Random Variables"]
-  distribution[label="Distribution(U/B/M)"]
-  uniform_distribution_c[label="Uniform Distribution(C)"]
-  uniform_distribution_d[label="Uniform Distribution(D)"]
+  random_variables[label="Random Variables",style=filled,color=gray]
+  distribution[label="Distribution(U/B/M)",style=filled,color=gray]
+  uniform_distribution_c[label="Uniform Distribution(C)",style=filled,color=gray]
+  uniform_distribution_d[label="Uniform Distribution(D)",style=filled,color=gray]
   continuity_distribution->uniform_distribution_c;
   discrete_distribution->uniform_distribution_d;
   sample_space->random_variables;
   random_variables->distribution;
   //3.2
-  probability_density_function[label="Probability Density Function(C)"]
+  probability_density_function[label="Probability Density Function(C)",style=filled,color=gray]
   continuity_distribution->probability_density_function;
   //3.3
-  cumulative_distribution_function[label="Cumulative Distribution Function(C/D)"]
-  quantile_function[label="Quantile Function(C/D)"]
+  cumulative_distribution_function[label="Cumulative Distribution Function(C/D)",style=filled,color=gray]
+  quantile_function[label="Quantile Function(C/D)",style=filled,color=gray]
   distribution->cumulative_distribution_function->quantile_function;
   //3.4
 
   //3.5
-  marginal_distribution[label="Marginal Distribution(C/D)"]
-  independent_random_variables[label="Independent Random Variables"]
+  marginal_distribution[label="Marginal Distribution(C/D)",style=filled,color=gray]
+  independent_random_variables[label="Independent Random Variables",style=filled,color=gray]
   random_variables->independent_random_variables;
   //3.6
-  conditional_distribution[label="Conditional Distribution(C/D)"]
+  conditional_distribution[label="Conditional Distribution(C/D)",style=filled,color=gray]
   distribution->conditional_distribution;
   //conditional_probability->conditional_distribution;
   //3.7
 
-  histograms[label="Histograms"]
+  histograms[label="Histograms",style=filled,color=gray]
   distribution->marginal_distribution;
   distribution->histograms;
   //3.8
-  function_of_random_variables[label="Function of (a) Random Variable(s)"]
-  integral_transformation[label="Integral Transformation"]
+  function_of_random_variables[label="Function of (a) Random Variable(s)",style=filled,color=gray]
+  integral_transformation[label="Integral Transformation",style=filled,color=gray]
   derivation_transformation[label="Derivation Transformation"]
 
   random_variables->function_of_random_variables;
@@ -128,63 +128,63 @@ digraph g
   Markov_chains[label="Markov Chains"]
   conditional_probability->Markov_chains;
   //4.1
-  expectation[label="Expectation/Mean"]
+  expectation[label="Expectation/Mean",style=filled,color=gray]
 
 
   distribution->expectation;
 
   //4.2
-  nonnegative_distribution[label="Nonnegative Distribution"]
+  nonnegative_distribution[label="Nonnegative Distribution",style=filled,color=gray]
   discrete_distribution->nonnegative_distribution;
   //4.3
-  variance[label="Variance"]
-  standard_deviation[label="Standard Deviation"]
-  interquartile_range[label="Interquartile Range"]
+  variance[label="Variance",style=filled,color=gray]
+  standard_deviation[label="Standard Deviation",style=filled,color=gray]
+  interquartile_range[label="Interquartile Range",style=filled,color=gray]
   expectation->variance->interquartile_range;
   variance->standard_deviation;
   //4.4
-  moment[label="Moment"]
-  central_moment[label="Central Moment"]
-  skewness[label="Skewness"]
-  moment_generating_function[label="Moment Generating Function"]
+  moment[label="Moment",style=filled,color=gray]
+  central_moment[label="Central Moment",style=filled,color=gray]
+  skewness[label="Skewness",style=filled,color=gray]
+  moment_generating_function[label="Moment Generating Function",style=filled,color=gray]
   expectation->moment->central_moment;
   moment->moment_generating_function;
   moment->skewness;
   //4.5
-  median[label="Median"]
-  mean_squared_error[label="Mean Squared Error"]
-  mean_absolute_error[label="Mean Absolute Error"]
-  multiple_medians[label="Multiple Medians"]
+  median[label="Median",style=filled,color=gray]
+  mean_squared_error[label="Mean Squared Error",style=filled,color=gray]
+  mean_absolute_error[label="Mean Absolute Error",style=filled,color=gray]
+  multiple_medians[label="Multiple Medians",style=filled,color=gray]
   random_variables->median;
   expectation->mean_squared_error->mean_absolute_error;
   median->multiple_medians;
   //4.6
-  covariance[label="Covariance"]
-  correlation[label="Correlation"]
+  covariance[label="Covariance",style=filled,color=gray]
+  correlation[label="Correlation",style=filled,color=gray]
   expectation->covariance->correlation;
   //4.7
-  conditional_expectation[label="Conditional Expectation"]
-  conditional_quantities[label="Conditional Quantities"]
+  conditional_expectation[label="Conditional Expectation",style=filled,color=gray]
+  conditional_quantities[label="Conditional Quantities",style=filled,color=gray]
   expectation->conditional_expectation->conditional_quantities;
 
   //4.8
 
 
   //5.1
-  Bernoulli_distribution[label="Bernoulli Distribution"]
-  binomial_distribution[label="Binomial Distribution"]
-  hypergeometric_distribution[label="Hypergeometric Distribution"]
-  poisson_distribution[label="Poisson Distribution"]
-  negative_binomial_distribution[label="Negative Binomial Distribution"]
-  geometric_distribution[label="Geometric Distribution"]
-  poisson_processes[label="Poisson Processes"]
-  Bernoulli_trials[label="Bernoulli Trials"]
+  Bernoulli_distribution[label="Bernoulli Distribution",style=filled,color=gray]
+  binomial_distribution[label="Binomial Distribution",style=filled,color=gray]
+  hypergeometric_distribution[label="Hypergeometric Distribution",style=filled,color=gray]
+  poisson_distribution[label="Poisson Distribution",style=filled,color=gray]
+  negative_binomial_distribution[label="Negative Binomial Distribution",style=filled,color=gray]
+  geometric_distribution[label="Geometric Distribution",style=filled,color=gray]
+  poisson_processes[label="Poisson Processes",style=filled,color=gray]
+  Bernoulli_trials[label="Bernoulli Trials",style=filled,color=gray]
 
-  normal_distribution[label="Normal Distribution"]
-  lognormal_distribution[label="Lognormal Distribution"]
-  gamma_distribution[label="Gamma Distribution"]
-  exponential_distribution[label="Exponential Distribution"]
-  beta_distribution[label="beta Distribution"]
+  normal_distribution[label="Normal Distribution",style=filled,color=gray]
+  lognormal_distribution[label="Lognormal Distribution",style=filled,color=gray]
+  gamma_distribution[label="Gamma Distribution",style=filled,color=gray]
+  exponential_distribution[label="Exponential Distribution",style=filled,color=gray]
+  beta_distribution[label="beta Distribution",style=filled,color=gray]
   //Weibull_distribution[label="Weibull Distribution"]
   //Pareto_distribution[label="Pareto Distribution"]
   //5.2
@@ -213,8 +213,8 @@ digraph g
   //6.1
   //6.2
 
-  Markov_Inequality[label="Markov Inequality"]
-  Chebyshev_Inequality[label="Chebyshev Inequality"]
+  Markov_Inequality[label="Markov Inequality",style=filled,color=gray]
+  Chebyshev_Inequality[label="Chebyshev Inequality",style=filled,color=gray]
   law_of_large_number[label="Law of Large Number"]
   expectation->Markov_Inequality->Chebyshev_Inequality->law_of_large_number;
   //6.3
