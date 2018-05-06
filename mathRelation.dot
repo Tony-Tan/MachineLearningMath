@@ -3,7 +3,7 @@ digraph ML_Math{           //设置分辨率
 	//graph[bgcolor="cadetblue"];
 	{
 		node[shape=plaintext]
-		"STAGE 0"->"STAGE 1"->"STAGE 2"->"STAGE 3"->"STAGE 4"->"STAGE 5";
+		"STAGE 0"->"STAGE 1"->"STAGE 2"->"STAGE 3";
 	}
 	{
 		node[shape=plaintext,fontname="SimSon"]
@@ -19,10 +19,9 @@ digraph ML_Math{           //设置分辨率
 		measurement_theory[label="Measurement Theory\n☆"];
 		probability[label="Probability\n☆☆☆☆☆"];
 		statistics[label="Statistics\n☆☆☆☆☆"];
-		random_process[label="Random Process\n☆☆☆☆"];
+		random_process[label="Random Process\n☆☆☆"];
 		information_theory[label="Information Theory\n☆☆☆☆"];
 		topology[label="Topology\n☆☆"]
-		target[shape=box,label="Machine Learning",color = gray,style=filled];
 
 		//subgraph cluster_analysis
 		//{
@@ -31,12 +30,10 @@ digraph ML_Math{           //设置分辨率
 		//}
 	}
 	{
-		{rank=same;"STAGE 0";set_theory;}
-		{rank=same;"STAGE 1";cal;linear_algebra;}
-		{rank=same;"STAGE 2";complex_fun;analysis;diff_equation;}
-		{rank=same;"STAGE 3";real_analysis;probability;topology}
-		{rank=same;"STAGE 4";function_analysis;measurement_theory;statistics;information_theory;}
-		{rank=same;"STAGE 5";convex_opt;random_process;}
+		{rank=same;"STAGE 0";set_theory;cal;linear_algebra;probability;}
+		{rank=same;"STAGE 1";analysis;statistics;information_theory;convex_opt;}
+		{rank=same;"STAGE 2";random_process;complex_fun;real_analysis;function_analysis;}
+		{rank=same;"STAGE 3";measurement_theory;diff_equation;topology;}
 	}
 	{
 		edge[color=darkgreen]
@@ -62,18 +59,4 @@ digraph ML_Math{           //设置分辨率
 		measurement_theory->probability[color=gray40];
 	}
 	/*edge to machine learing*/
-	{
-		edge[color=gold,style=dashed]
-		set_theory->target;
-		cal->target;
-		linear_algebra->target;
-		analysis->target;
-		function_analysis->target;
-		diff_equation->target;
-		convex_opt->target;
-		probability->target;
-		statistics->target;
-		random_process->target;
-		information_theory->target;
-	}
 }
