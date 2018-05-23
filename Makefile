@@ -6,7 +6,7 @@ LinearAlgebra: ./LinearAlgebra/LinearAlgebra.dot
 Probability: ./Probability/probability.dot ./Probability/random_variables.dot
 	dot -Tpng ./Probability/probability.dot -o Probability.png
 	dot -Tpng ./Probability/random_variables.dot -o random_variables.png
-Statistics:
-	dot -Tpng ./Statistics_History/Statistics_History.dot -o Statistics_History.png
+Statistics: ./Statistics/statistics.dot
+	dot -Tpng ./Statistics/statistics.dot -o Statistics.png
 clean:
-	rm Mathematic.png LinearAlgebra.png Probability.png Statistics_History.png
+	rm Mathematic.png LinearAlgebra.png Probability.png Statistics_History.png Statistics.png
