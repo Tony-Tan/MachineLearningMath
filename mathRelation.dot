@@ -3,7 +3,7 @@ digraph ML_Math{           //设置分辨率
 	//graph[bgcolor="cadetblue"];
 	{
 		node[shape=plaintext]
-		"STAGE 0"->"STAGE 1"->"STAGE 2"->"STAGE 3";
+		"STAGE 0"->"STAGE 1"->"STAGE 2";
 	}
 	{
 		node[shape=plaintext,fontname="SimSon"]
@@ -15,20 +15,18 @@ digraph ML_Math{           //设置分辨率
 		linear_algebra[label="Linear Algebra\n☆☆☆☆☆"];
 		diff_equation[label="Differential Equation\n☆☆"];
 		convex_opt[label="Convex Optimization\n☆☆☆☆☆"];
-		measurement_theory[label="Measurement Theory\n☆"];
 		probability[label="Probability\n☆☆☆☆☆"];
 		statistics[label="Statistics\n☆☆☆☆☆"];
 		random_process[label="Random Process\n☆☆☆"];
 		information_theory[label="Information Theory\n☆☆☆☆"];
 		topology[label="Topology\n☆☆"]
 
-
 	}
 	{
 		{rank=same;"STAGE 0";cal_analysis;linear_algebra;probability;}
-		{rank=same;"STAGE 1";statistics;information_theory;random_process;convex_opt;}
-		{rank=same;"STAGE 2";complex_fun;real_analysis;function_analysis;}
-		{rank=same;"STAGE 3";measurement_theory;topology;diff_equation;}
+		{rank=same;"STAGE 1";real_analysis;function_analysis;convex_opt;statistics;information_theory;}
+		{rank=same;"STAGE 2";complex_fun;random_process;topology;diff_equation;}
+
 	}
 	{
 		edge[color=darkgreen]
@@ -45,12 +43,10 @@ digraph ML_Math{           //设置分辨率
 		cal_analysis->topology;
 		real_analysis->function_analysis;
 		function_analysis->convex_opt;
-		function_analysis->measurement_theory;
 		probability->statistics;
 		probability->random_process;
 		statistics->information_theory;
 		probability->information_theory;
-		measurement_theory->probability[color=gray40];
 	}
 	/*edge to machine learing*/
 }
