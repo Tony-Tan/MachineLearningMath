@@ -7,12 +7,11 @@ digraph ML_Math{           //设置分辨率
 	}
 	{
 		node[shape=plaintext,fontname="SimSon"]
-		analysis[label="Ananlysis\n☆☆☆☆☆"];
 		complex_fun[label="Complex Function\n☆"];
 		real_analysis[label="Real Variable Function\n☆☆☆"];
 		function_analysis[label="Function Analysis\n☆☆☆"];
-		set_theory[label="Set Theory\n☆☆☆☆"];
-		cal[label="Calculus\n☆☆☆☆☆"];
+		set_theory[label="Set Theory\n☆☆☆☆",shape=record,style=filled];
+		cal_analysis[label="Calculus(Ananlysis)\n☆☆☆☆☆"];
 		linear_algebra[label="Linear Algebra\n☆☆☆☆☆"];
 		diff_equation[label="Differential Equation\n☆☆"];
 		convex_opt[label="Convex Optimization\n☆☆☆☆☆"];
@@ -23,37 +22,32 @@ digraph ML_Math{           //设置分辨率
 		information_theory[label="Information Theory\n☆☆☆☆"];
 		topology[label="Topology\n☆☆"]
 
-		//subgraph cluster_analysis
-		//{
-		//	label="Analysis"
 
-		//}
 	}
 	{
-		{rank=same;"STAGE 0";set_theory;cal;linear_algebra;probability;}
-		{rank=same;"STAGE 1";analysis;statistics;information_theory;convex_opt;}
-		{rank=same;"STAGE 2";random_process;complex_fun;real_analysis;function_analysis;}
-		{rank=same;"STAGE 3";measurement_theory;diff_equation;topology;}
+		{rank=same;"STAGE 0";cal_analysis;linear_algebra;probability;}
+		{rank=same;"STAGE 1";statistics;information_theory;random_process;convex_opt;}
+		{rank=same;"STAGE 2";complex_fun;real_analysis;function_analysis;}
+		{rank=same;"STAGE 3";measurement_theory;topology;diff_equation;}
 	}
 	{
 		edge[color=darkgreen]
-		set_theory->cal;
+		set_theory->cal_analysis;
 		set_theory->linear_algebra;
 		linear_algebra->diff_equation;
 		linear_algebra->probability;
 		linear_algebra->convex_opt;
-		cal->analysis;
-		cal->diff_equation;
-		cal->probability;
-		cal->complex_fun;
-		cal->convex_opt;
-		analysis->real_analysis;
-		analysis->topology;
+		cal_analysis->diff_equation;
+		cal_analysis->probability;
+		cal_analysis->complex_fun;
+		cal_analysis->convex_opt;
+		cal_analysis->real_analysis;
+		cal_analysis->topology;
 		real_analysis->function_analysis;
 		function_analysis->convex_opt;
 		function_analysis->measurement_theory;
 		probability->statistics;
-		statistics->random_process;
+		probability->random_process;
 		statistics->information_theory;
 		probability->information_theory;
 		measurement_theory->probability[color=gray40];
