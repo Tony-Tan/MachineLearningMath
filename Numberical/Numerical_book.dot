@@ -1,0 +1,12 @@
+digraph Numerical{           //设置分辨率
+	dpi = 320;
+
+		node[shape=plaintext,fontname="SimSon"]
+		0_3[label="第0~3章\n基础"];
+		5_8[label="第5~8章\n传统微积分/微分方程"];
+		4_10_11_12function_analysis[label="第4，10，11，12章\n离散数学，偏重正交性和压缩"];
+		4_6_8_9_13[label="第4，6，8，13章\n金融工程"];
+
+
+
+}

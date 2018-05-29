@@ -9,6 +9,6 @@ Probability: ./Probability/probability.dot ./Probability/random_variables.dot
 Statistics: ./Statistics/statistics.dot
 	dot -Tpng ./Statistics/statistics.dot -o Statistics.png
 Numerical: ./Numerical/Numerical_book.dot
-	dot -Tpng ./Numerical/Numerical_book.dot -o ./Numerical/Numerical_book.png
+	dot -Tpng ./Numerical/Numerical_book.dot -o Numerical_book.png
 clean:
 	rm Mathematic.png LinearAlgebra.png Probability.png Statistics_History.png Statistics.png
