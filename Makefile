@@ -1,4 +1,4 @@
-all:Mathematic LinearAlgebra Probability Statistics
+all:Mathematic LinearAlgebra Probability Statistics Numerical
 Mathematic: ./mathRelation.dot
 	dot -Tpng ./mathRelation.dot -o Mathematic.png
 LinearAlgebra: ./LinearAlgebra/LinearAlgebra.dot
