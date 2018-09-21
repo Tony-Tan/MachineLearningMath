@@ -1,4 +1,4 @@
-all:Mathematic LinearAlgebra Probability Statistics Numerical
+all:Mathematic LinearAlgebra Probability Statistics Numerical Information
 Mathematic: ./mathRelation.dot
 	dot -Tpng ./mathRelation.dot -o Mathematic.png
 LinearAlgebra: ./LinearAlgebra/LinearAlgebra.dot
@@ -10,5 +10,7 @@ Statistics: ./Statistics/statistics.dot
 	dot -Tpng ./Statistics/statistics.dot -o Statistics.png
 Numerical: ./Numerical/Numerical_book.dot
 	dot -Tpng ./Numerical/Numerical_book.dot -o Numerical_book.png
+Information: ./InformationTheory/information.dot
+	dot -Tpng ./InformationTheory/information.dot -o information.png
 clean:
-	rm Mathematic.png LinearAlgebra.png Probability.png Statistics_History.png Statistics.png
+	rm Mathematic.png LinearAlgebra.png Probability.png Statistics_History.png Statistics.png information.png

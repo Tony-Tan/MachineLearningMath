@@ -1,0 +1,108 @@
+digraph INFORMATION{
+	dpi = 320;
+	rankdir=LR;
+	{
+		node[shape=box,fontname="SimSon"]
+		a1[label="1. Introduction to Information Theory",style=filled,color=gray];
+		a2[label="2. Probability, Entropy, and Inference",style=filled,color=gray];
+		a3[label="3. More about Inference",style=filled,color=gray];
+
+
+		a4[label="4. The Source Coding Theorem",style=filled,color=gray];
+		a5[label="5. Symbol Codes",style=filled,color=gray];
+		a6[label="6. Stream Codes",style=filled,color=gray];
+		#a7[label="7. Codes for Integers"];
+
+		a8[label="8. Dependent Random Variables",style=filled,color=gray];
+		a9[label="9. Communication over a Noisy Channel",style=filled,color=gray];
+		a10[label="10. The Noisy-Channel Coding Theorem",style=filled,color=gray];
+		a11[label="11. Error-Correcting Codes and Real Channels",style=filled,color=gray];
+
+		#a12[label="12. Hash Codes: Codes for Ecient Information Retrieval"];
+		#a13[label="13. Binary Codes"];
+		#a14[label="14. Very Good Linear Codes Exist"];
+		#a15[label="15. Further Exercises on Information Theory"];
+		#a16[label="16. Message Passing"];
+		#a17[label="17. Communication over Constrained Noiseless Channels"];
+		#a18[label="18. Crosswords and Codebreaking"];
+		#a19[label="19. Why have Sex? Information Acquisition and Evolution"];
+
+		a20[label="20. An Example Inference Task: Clustering",style=filled,color=gray];
+		a21[label="21. Exact Inference by Complete Enumeration",style=filled,color=gray];
+		a22[label="22. Maximum Likelihood and Clustering",style=filled,color=gray];
+		a23[label="23. Useful Probability Distributions",style=filled,color=gray];
+		a24[label="24. Exact Marginalization",style=filled,color=gray];
+		#a25[label="25. Exact Marginalization in Trellises"];
+		#a26[label="26. Exact Marginalization in Graphs"];
+		a27[label="27. Laplace's Method",style=filled,color=gray];
+		a28[label="28. Model Comparison and Occam's Razor",style=filled,color=gray];
+		a29[label="29. Monte Carlo Methods",style=filled,color=gray];
+		a30[label="30. Ecient Monte Carlo Methods",style=filled,color=gray];
+		a31[label="31. Ising Models",style=filled,color=gray];
+		a32[label="32. Exact Monte Carlo Sampling",style=filled,color=gray];
+		a33[label="33. Variational Methods",style=filled,color=gray];
+		a34[label="34. Independent Component Analysis and Latent Variable Modelling",style=filled,color=gray];
+		#a35[label="35. Random Inference Topics"];
+		#a36[label="36. Decision Theory"];
+		#a37[label="37. Bayesian Inference and Sampling Theory"];
+
+		a38[label="38. Introduction to Neural Networks",style=filled,color=gray];
+		a39[label="39. The Single Neuron as a Classier",style=filled,color=gray];
+		a40[label="40. Capacity of a Single Neuron",style=filled,color=gray];
+		a41[label="41. Learning as Inference",style=filled,color=gray];
+		a42[label="42. Hopeld Networks",style=filled,color=gray];
+		a43[label="43. Boltzmann Machines",style=filled,color=gray];
+		a44[label="44. Supervised Learning in Multilayer Networks",style=filled,color=gray];
+		a45[label="45. Gaussian Processes",style=filled,color=gray];
+		#a46[label="46. Deconvolution"];
+
+
+		a47[label="47. Low-Density Parity-Check Codes",style=filled,color=gray];
+		#a48[label="48. Convolutional Codes and Turbo Codes"];
+		#a49[label="49. Repeat{Accumulate Codes"];
+		#a50[label="50. Digital Fountain Codes"];
+	}
+	{
+		subgraph cluster_Prefact{label="Prefact";a1;a2;a3;}
+		subgraph cluster_I{label="I";a4;a5;a6;}
+		subgraph cluster_II{label="II";a8;a9;a10;a11;}
+		#subgraph cluster_III{label="III";a12;a13;a14;a15;a16;a17;a18;a19;}
+		subgraph cluster_IV{label="IV";a20;a21;a22;a23;a24;a27;a28;a29;a30;a31;a32;a33;a34;}
+		subgraph cluster_V{label="V";a38;a39;a40;a41;a42;a43;a44;a45;}
+		subgraph cluster_VI{label="VI";a47}
+
+	}
+	{
+		edge[color=darkgray]
+		#a1->a25;
+		a1->a10;
+		a1->a47;
+		a2->a3;
+		a2->a4;
+		a4->a10;
+		a5->a6;
+		#a5->a7;
+		a8->a9;
+		a9->a10;
+		a10->a11;
+		#a10->a14;
+		#a13->a14;
+		#a16->a17;
+		#a16->a26;
+		#a17->a25;
+		a20->a22;
+		a23->a24;
+		#a25->a48;
+		a29->a30;
+		a29->a32;
+		a31->a33;
+		a33->a42;
+		a39->a40;
+		a39->a41;
+		a41->a44;
+		a42->a43;
+		a44->a45;
+		#a48->a49;
+	}
+
+}
